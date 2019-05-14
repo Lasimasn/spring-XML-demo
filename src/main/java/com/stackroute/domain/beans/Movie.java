@@ -1,8 +1,12 @@
 package com.stackroute.domain.beans;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 import java.util.List;
 
-public class Movie {
+public class Movie implements ApplicationContextAware {
 
     private List <Actor> actor1;
     private List <Actor> actor2;
@@ -54,5 +58,11 @@ public class Movie {
         for(Actor actor: actor3)
             System.out.println(actor.getName()+" , "+actor.getGender()+" , "+actor.getAge());
 
+    }
+
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext);
+        Actor actor=(Actor) applicationContext.getBean("actor1");
+        System.out.println(actor);
     }
 }

@@ -1,6 +1,11 @@
 package com.stackroute.domain.beans;
 
-public class Actor {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+
+public class Actor implements BeanNameAware, BeanFactoryAware {
     private String name;
     private String gender;
     private int age;
@@ -44,6 +49,15 @@ public class Actor {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setBeanName(String s) {
+        System.out.println("Bean" +s);
+
+    }
+
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("In bean factory"+beanFactory);
     }
 //    public void  print()
 //    {
