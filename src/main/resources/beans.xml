@@ -29,4 +29,7 @@
         <property name="age" value="28" />
     </bean>
 
-</beans>
+    <bean id="lifecycle" class="com.stackroute.domain.beans.LifeCycle" init-method="customInit" destroy-method="customDestroy">
+
+    </bean>
+    </beans>
