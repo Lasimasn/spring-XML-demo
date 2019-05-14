@@ -1,11 +1,6 @@
 package com.stackroute.domain.beans;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.BeanNameAware;
-
-public class Actor implements BeanNameAware, BeanFactoryAware {
+public class Actor {
     private String name;
     private String gender;
     private int age;
@@ -18,20 +13,13 @@ public class Actor implements BeanNameAware, BeanFactoryAware {
         this.age = age;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Actor{" +
-//                "name='" + name + '\'' +
-//                ", gender='" + gender + '\'' +
-//                ", age=" + age +
-//                '}';
-//    }
-
-        public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
@@ -51,17 +39,15 @@ public class Actor implements BeanNameAware, BeanFactoryAware {
         this.age = age;
     }
 
-    public void setBeanName(String s) {
-        System.out.println("Bean" +s);
-
+    @Override
+    public String toString() {
+        return "{" +
+                "name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                '}';
     }
 
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("In bean factory"+beanFactory);
-    }
-//    public void  print()
-//    {
-//        System.out.println(getName()+" is a "+getGender()+" actor of age "+getAge());
-//
-//    }
+
+
 }
