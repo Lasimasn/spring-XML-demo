@@ -19,7 +19,7 @@ public class LifeCycle implements InitializingBean, DisposableBean
         System.out.println("In afterPropertiesSet");
     }
 
-    public void customDestroy()
+    public void customDestroy() throws Exception
     {
         System.out.println("In custom Destroy");
     }

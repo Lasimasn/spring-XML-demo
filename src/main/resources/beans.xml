@@ -32,4 +32,7 @@
     <bean id="lifecycle" class="com.stackroute.domain.beans.LifeCycle" init-method="customInit" destroy-method="customDestroy">
 
     </bean>
+    <bean id="postprocessor" class="com.stackroute.domain.beans.PostProcessorDemo">
+
+    </bean>
     </beans>
